@@ -29,6 +29,8 @@ services:
       SERVICE_NAME: mysql
     networks:
       - course-work
+    volumes:
+      - mysql-data:/var/lib/mysql
 
   nginx:
     image: nginx:alpine
@@ -45,3 +47,6 @@ services:
 networks:
   course-work:
     driver: bridge
+
+volumes:
+  mysql-data:

@@ -17,4 +17,6 @@ Route::group([
     'namespace'  => 'App\Http\Controllers\Admin',
 ], function () {
     Route::crud('user', 'UserCrudController');
+    Route::crud('order', 'OrderCrudController');
+    Route::crud('sessions', 'SessionsCrudController');
 });

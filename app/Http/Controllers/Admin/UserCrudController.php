@@ -75,9 +75,9 @@ class UserCrudController extends CrudController
             'password' => 'required',
         ]);
 
-        CRUD::field('name');
-        CRUD::field('email');
-        CRUD::field('password');
+        CRUD::field('name')->type('text');
+        CRUD::field('email')->type('email');
+        CRUD::field('password')->type('password');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

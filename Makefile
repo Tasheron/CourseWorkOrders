@@ -8,6 +8,8 @@ init:
 	cp .env.example .env
 	cp docker/.env.example docker/.env
 	composer install
+	npm install
+	npm run dev
 	php artisan key:generate
 	cd docker && docker-compose exec app bash -c "php artisan migrate && exit"
 
@@ -19,6 +21,8 @@ down:
 
 app:
 	cd docker && docker-compose exec app bash
+css:
+	npm run dev
 
 db:
 	cd docker && docker-compose exec db bash -c "mysql -u$(USER) -p$(PASSWORD) $(DB)"
